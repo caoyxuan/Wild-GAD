@@ -143,8 +143,8 @@ def subgraph(data, aug_ratio, labels ):
 
     return data
 def process(ogb, aug, ratio):
-    file_path_pre = "/home/caoyuxuan/graphmae/text_data/pre/labeled/"
-    file_path_load = "/home/caoyuxuan/newanomaly/data/pre/"
+    file_path_pre = "text_data/pre/labeled/"
+    file_path_load = "data/pre/"
     data = torch.load(file_path_pre +ogb+"/"+ ogb +".pt")
     if not isinstance(data, Data):
         data = from_dgl(data)
