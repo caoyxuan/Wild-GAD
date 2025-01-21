@@ -9,7 +9,7 @@ external_datasets_small_unlabled = ["cora","pubmed","wikics","reddit"]
 external_datasets_large_unlabled = ["Electronics","Entertainment","Fashion","Home","Learning","arxiv"]
 external_datasets_labled = ["instagram","yelpres","yelpnyc"]
 down_datasets = ['c15','amazon_cn','Tolokers','twi20','Enron','yelphtl']
-def load_external_data(data_name, external_path="/home/caoyuxuan/graphmae/text_data/pre/", ano='0', type=0):
+def load_external_data(data_name, external_path="text_data/pre/", ano='0', type=0):
     if type == 0:
         external_path = external_path + "unlabeled/small/" + data_name + "/"
     elif type == 1:
@@ -29,7 +29,7 @@ def load_external_data(data_name, external_path="/home/caoyuxuan/graphmae/text_d
         graph_pres.append(pyg_data)
     return graph_pres, external_datas
 
-def load_external_data_big(data_name,external_path = "graphmae/text_data/pre/",ano='0',type=0):
+def load_external_data_big(data_name,external_path = "text_data/pre/",ano='0',type=0):
     external_path = external_path + "unlabeled/big/" + data_name + "/"
     external_datas = os.listdir(external_path + "raw/")
     graph_pres = []
@@ -49,7 +49,7 @@ def load_external_data_big(data_name,external_path = "graphmae/text_data/pre/",a
         graph_pres.append(graph_pre)
     ego_graphs_file_path = external_path + "subgraphs/"
     return graph_pres, external_datas, ego_graphs_file_path
-def load_raw_data(data_name, external_path="graphmae/text_data/pre/", ano='0', type=0):
+def load_raw_data(data_name, external_path="text_data/pre/", ano='0', type=0):
     if type == 0:
         external_path = external_path + "unlabeled/small/" + data_name + "/"
     elif type == 1:
@@ -64,7 +64,7 @@ def load_raw_data(data_name, external_path="graphmae/text_data/pre/", ano='0', t
     if ano == '1':
         pyg_data.y = torch.tensor(pyg_data.y)
     return pyg_data
-def load_down_data(data_name,down_path="graphmae/text_data/down/"):
+def load_down_data(data_name,down_path="text_data/down/"):
     down_path = down_path + data_name + ".pt"
     pyg_data = torch.load(down_path)
     pyg_data.x = torch.tensor(pyg_data.x)
@@ -86,7 +86,7 @@ def statistic_cal(data):
     edge_num = len(list(nxgraph.edges))
     return node_num,edge_num
 # write a testing sample:
-# external_path = "/home/caoyuxuan/graphmae/text_data/pre/"
+# external_path = "text_data/pre/"
 # for data_name in external_datasets_small_unlabled:
 #     graph_pres, external_datas = load_external_data(data_name, external_path)
 #     for i in range(len(graph_pres)):
@@ -94,7 +94,7 @@ def statistic_cal(data):
 #         data = graph_pres[i]
 #         print(statistic_cal(data))
 
-external_path = "/home/caoyuxuan/graphmae/text_data/pre/"
+external_path = "text_data/pre/"
 for data_name in down_datasets:
     graph_pres, external_datas = load_external_data(data_name, external_path, type=3)
     for i in range(len(graph_pres)):
@@ -102,7 +102,7 @@ for data_name in down_datasets:
         data = graph_pres[i]
         print(statistic_cal(data))
 
-# external_path = "/home/caoyuxuan/graphmae/text_data/pre/"
+# external_path = "text_data/pre/"
 # for data_name in external_datasets_large_unlabled:
 #     graph_pres, external_datas = load_external_data(data_name, external_path, type=2)
 #     for i in range(len(graph_pres)):
@@ -110,12 +110,12 @@ for data_name in down_datasets:
 #         data = graph_pres[i]
 #         print(statistic_cal(data))
 
-# down_path = "/home/caoyuxuan/graphmae/text_data/down/"
+# down_path = "text_data/down/"
 # for data_name in down_datasets:
 #     data = load_down_data(data_name, down_path)
 #     print(statistic_cal(data))
 
-# external_path = "/home/caoyuxuan/graphmae/text_data/pre/"
+# external_path = "text_data/pre/"
 # for data_name in external_datasets_labled:
 #     graph_pres, external_datas = load_external_data(data_name, external_path, type=1)
 #     for i in range(len(graph_pres)):
