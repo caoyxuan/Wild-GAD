@@ -5,7 +5,7 @@ from with_bert import get_vec
 import torch
 from graphmae.datasets.data_util import to_dgl
 d_name = "ogbn-products"
-dataset = PygNodePropPredDataset(name = d_name, root = "/home/caoyuxuan/graphmae/text_data/")
+dataset = PygNodePropPredDataset(name = d_name, root = "text_data/")
 data = dataset[0]
 print(data.num_nodes)
 pre_process_str_mapping = []
