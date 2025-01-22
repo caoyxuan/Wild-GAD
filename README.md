@@ -33,23 +33,25 @@ You can download all the external datasets  and downstream datasets from [here](
 ## Command-Line Execution
 You can run the Wild-GAD framework using the following command:
 ```
-python wild_gad.py \
-    --down_data <downstream dataset name> \
-    --model <anomaly detection model> \
-    --gpu <GPU ID> \
-    --out_path <output path for results> \
-    --base_model_path <path to store base models> \
-    --con_model_path <path to store continued models> \
-    --down_path <path to downstream datasets>
+python wild_gad.py [-h] [--down_data DOWN_DATA] [--model MODEL] [--gpu GPU] 
+            [--out_path OUT_PATH] [--base_model_path BASE_MODEL_PATH] 
+            [--con_model_path CON_MODEL_PATH] [--down_path DOWN_PATH] 
+            [--lrs LRS] [--hid_dims HID_DIMS] [--lrs_con LRS_CON] 
+            [--ewc_rate EWC_RATE]
 ```
 #### Arguments:
-- `--down_data`: Name of the downstream dataset.
-- `--model`: Anomaly detection model to use (e.g., `OCGNN`, `DOMINANT`).
-- `--gpu`: GPU ID for computation.
-- `--out_path`: Path to save the performance results.
-- `--base_model_path`: Path to save the base model.
-- `--con_model_path`: Path to save the continued model.
-- `--down_path`: Directory containing downstream datasets.
+
+- `--down_data DOWN_DATA`: Name of the downstream dataset.
+- `--model MODEL`: Anomaly detection model to use.
+- `--gpu GPU`: GPU ID for computation.
+- `--out_path OUT_PATH`: Path to save the performance results.
+- `--base_model_path BASE_MODEL_PATH`: Path to save the base model.
+- `--con_model_path CON_MODEL_PATH`: Path to save the continued model.
+- `--down_path DOWN_PATH`: Directory containing downstream datasets.
+- `--lrs LRS`: Learning rates for datasets in a dictionary format`.
+- `--hid_dims HID_DIMS`: Hidden dimensions for datasets in a dictionary format.
+- `--lrs_con LRS_CON`: Learning rates for continued training in a dictionary format.
+- `--ewc_rate EWC_RATE`: Elastic Weight Consolidation (EWC) rates in a dictionary format.
 
 ## Citation
 If you use this code or dataset in your research, please cite our work:
