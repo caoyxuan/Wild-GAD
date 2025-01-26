@@ -33,7 +33,7 @@ You can download all the external datasets  and downstream datasets from [here](
 ## Command-Line Execution
 You can run the Wild-GAD framework using the following command:
 ```
-python wild_gad.py [-h] [--down_data DOWN_DATA] [--model MODEL] [--gpu GPU] 
+python train.py [-h] [--down_data DOWN_DATA] [--model MODEL] [--gpu GPU] 
             [--out_path OUT_PATH] [--base_model_path BASE_MODEL_PATH] 
             [--con_model_path CON_MODEL_PATH] [--down_path DOWN_PATH] 
             [--lrs LRS] [--hid_dims HID_DIMS] [--lrs_con LRS_CON] 
